@@ -1,0 +1,11 @@
+name: vérification du lancement
+on: [push]
+
+jobs:
+  info-system:
+    runs-on: ubuntu-latest
+    steps:
+      - name: affichage des vérifications de lancement
+        run: |
+            echo "Vérification du lancement du projet"
+            curl -I http://localhost:3000/app-base-reactjs
