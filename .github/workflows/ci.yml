@@ -5,10 +5,12 @@ jobs:
   lancement:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+
       - name: affichage des vérifications de lancement
         run: |
           echo "Vérification du lancement de la route"
           npm install
           npm run build
-          npm start
-          curl -I http://localhost:3000
+          npm start &
+          curl -I http://localhost:3000 | sort
