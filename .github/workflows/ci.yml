@@ -7,5 +7,8 @@ jobs:
     steps:
       - name: affichage des vérifications de lancement
         run: |
-            echo "Vérification du lancement du projet"
-            curl -I http://localhost:3000
+          echo "Vérification du lancement de la route"
+          npm install
+          npm run build
+          npm start
+          curl -I http://localhost:3000
